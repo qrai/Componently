@@ -1,0 +1,49 @@
+{
+  "name": "componently",
+  "version": "1.0.0",
+  "description": "Library to define reactive WebComponents easily",
+  "main": "dist/index.js",
+  "files": [
+    "dist/*.js"
+  ],
+  "scripts": {
+    "serve": "webpack serve --mode development --config webpack.dev.js",
+    "build": "webpack --mode production --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qrai/Componently.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "js",
+    "framework",
+    "library",
+    "reactive",
+    "mvc",
+    "component",
+    "webcomponents"
+  ],
+  "author": "qrai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qrai/Componently/issues"
+  },
+  "homepage": "https://github.com/qrai/Componently#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.2",
+    "@babel/plugin-proposal-class-properties": "^7.17.12",
+    "@babel/plugin-proposal-private-methods": "^7.17.12",
+    "@babel/plugin-syntax-jsx": "^7.17.12",
+    "@babel/preset-env": "^7.18.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.2.7",
+    "html-webpack-plugin": "^5.5.0",
+    "babel-loader": "^8.2.5",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^3.11.3"
+  }
+}
