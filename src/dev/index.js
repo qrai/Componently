@@ -1,29 +1,50 @@
 import { Component } from '../framework/index'
 
-Component('my-counter', class {
+Component('login-form', class {
+	//get shadow() {
+	//	return { mode: 'open' }
+	//}
+
 	render() {
 		return /*html*/`
-			<p>Clicked ${this.$state.count} times</p>
+			<slot name="title"></slot>
+			<input type="text" id="input_name" @input="onInput" placeholder="Name...">
+			<input type="email" id="input_email" @input="onInput" placeholder="Email...">
+
+			<button @click="show">Print</button>
 		`
 	}
 
-	events() {
+	style() {
+		return /*css*/`
+			:host {
+				max-width: 16rem;
+
+				display: flex;
+				flex-direction: column;
+				gap: .4rem;
+
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
+		`
+	}
+
+	methods() {
 		return {
-			click() {
-				this.$state.count++
+			onInput(e) {
+				console.log(e.target.value)
+			},
+			show() {
+				console.log({
+					name: this.$refs.input_name.value,
+					email: this.$refs.input_email.value
+				})
 			}
 		}
 	}
-
-	props() {
-		return {
-			'value': (val) => parseInt(val, 10)
-		}
-	}
-
-	state() {
-		return {
-			count: this.$props.value || 0
-		}
-	}
 })
+
+console.log(Component(null, class {}).$tag)
